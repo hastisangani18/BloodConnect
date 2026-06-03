@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal - BloodConnect</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="register.html" id="nav-register">Register Donor</a>
+            <a href="search.html" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+            <a href="admin.html" class="active" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+            <button class="btn primary-btn" id="admin-logout-btn" style="padding: 8px 16px; font-size: 13px; margin-left: 10px;">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header Title -->
+    <div class="page-header">
+        <span class="badge"><i class="fa-solid fa-chart-line"></i> Analytics Console</span>
+        <h1 class="page-title">Admin Management Portal</h1>
+        <p class="section-subtitle">Real-time tracking of donor numbers, SOS requests, blood distributions, and complete database registry actions.</p>
+    </div>
+
+    <!-- Admin Analytics Dashboard -->
+    <main class="admin-grid">
+        <!-- Aggregate Stats Cards Row -->
+        <section class="analytics-cards" aria-label="Aggregates Overview">
+            <!-- Card 1 -->
+            <div class="stat-box" style="padding: 24px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Total Registered</span>
+                    <i class="fa-solid fa-users" style="color: var(--primary); font-size: 20px;"></i>
+                </div>
+                <h2 id="agg-donors" style="font-size: 32px; line-height: 1; margin-bottom: 4px;">0</h2>
+                <p style="font-size: 12px; font-weight: 500;">Healthy Donors Listed</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="stat-box" style="padding: 24px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">SOS Fulfilled</span>
+                    <i class="fa-solid fa-circle-check" style="color: var(--success); font-size: 20px;"></i>
+                </div>
+                <h2 id="agg-fulfilled" style="font-size: 32px; line-height: 1; margin-bottom: 4px;">0</h2>
+                <p style="font-size: 12px; font-weight: 500;">Emergency Cases Closed</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="stat-box" style="padding: 24px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Critical Pending</span>
+                    <i class="fa-solid fa-triangle-exclamation" style="color: var(--danger); font-size: 20px;"></i>
+                </div>
+                <h2 id="agg-critical" style="font-size: 32px; line-height: 1; margin-bottom: 4px;">0</h2>
+                <p style="font-size: 12px; font-weight: 500;">Immediate Matchings Open</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="stat-box" style="padding: 24px; text-align: left;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <span style="font-size: 14px; font-weight: 700; color: var(--text-secondary);">Blood Banks</span>
+                    <i class="fa-solid fa-hospital" style="color: var(--info); font-size: 20px;"></i>
+                </div>
+                <h2 id="agg-bbanks" style="font-size: 32px; line-height: 1; margin-bottom: 4px;">0</h2>
+                <p style="font-size: 12px; font-weight: 500;">Partner Networks Connected</p>
+            </div>
+        </section>
+
+        <!-- Charts Dashboard Section -->
+        <section class="admin-charts-grid" aria-label="Visual Analytics Charts">
+            <!-- Bar Chart: City Distribution -->
+            <div class="chart-card">
+                <h3><i class="fa-solid fa-map-location-dot"></i> City Wise Registry Distribution</h3>
+                <div class="bar-chart-container">
+                    <!-- Delhi -->
+                    <div class="bar-item" id="bar-delhi">
+                        <div class="bar-fill" style="height: 0px;"><span class="bar-val">0</span></div>
+                        <span class="bar-label">Delhi</span>
+                    </div>
+                    <!-- Mumbai -->
+                    <div class="bar-item" id="bar-mumbai">
+                        <div class="bar-fill" style="height: 0px;"><span class="bar-val">0</span></div>
+                        <span class="bar-label">Mumbai</span>
+                    </div>
+                    <!-- Bangalore -->
+                    <div class="bar-item" id="bar-bangalore">
+                        <div class="bar-fill" style="height: 0px;"><span class="bar-val">0</span></div>
+                        <span class="bar-label">Blore</span>
+                    </div>
+                    <!-- Jaipur -->
+                    <div class="bar-item" id="bar-jaipur">
+                        <div class="bar-fill" style="height: 0px;"><span class="bar-val">0</span></div>
+                        <span class="bar-label">Jaipur</span>
+                    </div>
+                    <!-- Kolkata -->
+                    <div class="bar-item" id="bar-kolkata">
+                        <div class="bar-fill" style="height: 0px;"><span class="bar-val">0</span></div>
+                        <span class="bar-label">Kolkata</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doughnut Chart: Blood Groups Distribution -->
+            <div class="chart-card">
+                <h3><i class="fa-solid fa-droplet"></i> Blood Group Distribution Ratio</h3>
+                <div class="doughnut-chart-container">
+                    <div class="circle-ring">
+                        <div class="circle-inner">
+                            <h4 style="color:var(--primary);">A+ B+ O+</h4>
+                            <p>Ratios</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Color Coding Legends -->
+                    <div class="legend-list">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: var(--primary);"></div>
+                            <span>O+: <strong id="val-group-op">0</strong></span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: hsl(355, 60%, 65%);"></div>
+                            <span>B+: <strong id="val-group-bp">0</strong></span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: hsl(200, 95%, 48%);"></div>
+                            <span>A-: <strong id="val-group-am">0</strong></span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: hsl(142, 70%, 45%);"></div>
+                            <span>AB+: <strong id="val-group-abp">0</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Database Sheet List Panel -->
+        <section class="sheet-card" aria-label="Donor Database Table">
+            <div class="sheet-header">
+                <h3 style="margin-bottom: 0; font-family: var(--font-heading);"><i class="fa-solid fa-database"></i> Donor Directory Database Sheet</h3>
+            </div>
+            
+            <div class="sheet-table-wrapper">
+                <table class="sheet-table">
+                    <thead>
+                        <tr>
+                            <th>Donor Name</th>
+                            <th>Group</th>
+                            <th>City</th>
+                            <th>WhatsApp Mobile</th>
+                            <th>Registry Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-donors-table">
+                        <!-- Populated dynamically via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

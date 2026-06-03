@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - BloodConnect</title>
+    <meta name="description" content="User sign in page for BloodConnect donor and emergency blood request access.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo" id="header-logo">
+        🩸 <span>BloodConnect</span>
+    </a>
+    <nav aria-label="Main Navigation">
+        <a href="index.html" id="nav-home">Home</a>
+        <a href="register.html" id="nav-register">Register Donor</a>
+        <a href="search.html" id="nav-search">Find Blood</a>
+        <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+        <a href="admin-login.html" id="nav-admin">Admin</a>
+        <a href="signin.html" class="active">Sign In</a>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+    </nav>
+</header>
+
+<div class="page-header">
+    <span class="badge"><i class="fa-solid fa-user-shield"></i> User Access</span>
+    <h1 class="page-title">User Sign In</h1>
+    <p class="section-subtitle">Sign in to manage your donor profile, emergency requests, and BloodConnect activity.</p>
+</div>
+
+<main style="padding: 0 8% 80px;">
+    <div class="glass-card form-container" style="max-width: 450px;">
+        <form id="signin-form">
+
+            <div class="form-group">
+                <label for="signin-email">Email Address</label>
+                <div style="position: relative;">
+                    <input type="email" id="signin-email" class="form-control" style="padding-left: 44px;" placeholder="Enter your email address" required>
+                    <i class="fa-solid fa-envelope" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="signin-password">Password</label>
+                <div style="position: relative;">
+                    <input type="password" id="signin-password" class="form-control" style="padding-left: 44px;" placeholder="Enter your password" required>
+                    <i class="fa-solid fa-key" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                </div>
+            </div>
+
+            <button type="submit" class="btn primary-btn" style="width: 100%; padding: 14px; margin-top: 10px;">
+                <i class="fa-solid fa-right-to-bracket"></i> Sign In
+            </button>
+
+            <p style="text-align:center; margin-top:20px; color:var(--text-secondary); font-size:14px;">
+                New donor? <a href="register.html" style="color:var(--primary); font-weight:700;">Register here</a>
+            </p>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+document.getElementById("signin-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Sign in successful!");
+    window.location.href = "index.html";
+});
+</script>
+
+</body>
+</html>

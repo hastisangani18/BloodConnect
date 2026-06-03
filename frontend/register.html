@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Blood Donor - BloodConnect</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="register.html" class="active" id="nav-register">Register Donor</a>
+            <a href="search.html" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+            <a href="admin.html" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header Title -->
+    <div class="page-header">
+        <span class="badge"><i class="fa-solid fa-heart-pulse"></i> Save Lives</span>
+        <h1 class="page-title">Register as a Blood Donor</h1>
+        <p class="section-subtitle">Take 2 minutes to fill in your blood group and city. Your details will be listed on our finder board to help nearby emergency cases.</p>
+    </div>
+
+    <!-- Registration Form Section -->
+    <main style="padding: 0 8% 80px;">
+        <div class="glass-card form-container">
+            <form id="register-form">
+                <!-- Donor Name -->
+                <div class="form-group">
+                    <label for="donor-name">Full Name</label>
+                    <input type="text" id="donor-name" class="form-control" placeholder="Enter your full name" required>
+                </div>
+
+                <!-- Blood Group Selection -->
+                <div class="form-group">
+                    <label>Select Blood Group</label>
+                    <div class="blood-grid">
+                        <div class="blood-chip" data-group="A+">A+</div>
+                        <div class="blood-chip" data-group="A-">A-</div>
+                        <div class="blood-chip" data-group="B+">B+</div>
+                        <div class="blood-chip" data-group="B-">B-</div>
+                        <div class="blood-chip" data-group="O+">O+</div>
+                        <div class="blood-chip" data-group="O-">O-</div>
+                        <div class="blood-chip" data-group="AB+">AB+</div>
+                        <div class="blood-chip" data-group="AB-">AB-</div>
+                    </div>
+                    <input type="hidden" id="selected-blood-group" required>
+                </div>
+
+                <!-- City Location -->
+                <div class="form-group">
+                    <label for="donor-city">City Location</label>
+                    <input type="text" id="donor-city" class="form-control" placeholder="e.g. Delhi, Mumbai, Bangalore" required>
+                </div>
+
+                <!-- WhatsApp Mobile Number -->
+                <div class="form-group">
+                    <label for="donor-phone">WhatsApp Number (For Direct Contact)</label>
+                    <input type="tel" id="donor-phone" class="form-control" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="donor-email">Email Address</label>
+                    <input type="email" id="donor-email" class="form-control" placeholder="Enter your email address" required>
+                </div>
+
+                <!-- Availability Toggle Switch -->
+                <div class="switch-wrapper">
+                    <div class="switch-label">
+                        <span>Emergency Availability Toggle</span>
+                        <small>Switch off when you are temporarily unavailable for blood donations.</small>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="availability-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn primary-btn" style="width: 100%; padding: 16px;">
+                    <i class="fa-solid fa-user-plus"></i> Submit Registry Form
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Success Feedback Overlay Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h3>Registration Completed!</h3>
+            <p>Your blood group profile has been verified and registered onto BloodConnect. Donors can search for you during crisis times.</p>
+            <button class="btn primary-btn" id="modal-close-btn" style="width: 100%;">
+                <i class="fa-solid fa-magnifying-glass"></i> View Finder Board
+            </button>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

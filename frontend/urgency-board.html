@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgency Board - BloodConnect</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="register.html" id="nav-register">Register Donor</a>
+            <a href="search.html" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" class="active" id="nav-board">Urgency Board</a>
+            <a href="admin.html" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header Title -->
+    <div class="page-header">
+        <span class="badge" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.25);">
+            <i class="fa-solid fa-triangle-exclamation" style="animation: heartbeat 1.2s infinite; color: var(--danger);"></i> SOS Bulletin
+        </span>
+        <h1 class="page-title">Live Urgency Blood Board</h1>
+        <p class="section-subtitle">Real-time alerts submitted by families and hospitals. If you match any blood group, please contact them instantly or share via WhatsApp SOS alerts.</p>
+        
+        <!-- Alerts Sub-statistics -->
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 10px;">
+            <span style="font-size: 14px; font-weight: 600; color: var(--text-secondary);">
+                Active Critical Alerts: <strong style="color: var(--danger);" id="critical-count">0</strong>
+            </span>
+        </div>
+    </div>
+
+    <!-- Live Urgent Feeds Grid -->
+    <main class="board-grid" id="urgency-container">
+        <!-- Rendered dynamically in JS -->
+    </main>
+
+    <!-- Floating Action Button to post request -->
+    <div class="floating-btn" id="open-request-modal">
+        <i class="fa-solid fa-circle-plus"></i> Post Emergency Request
+    </div>
+
+    <!-- Modal for Posting Urgent Request -->
+    <div class="modal-overlay" id="request-modal">
+        <div class="modal-content" style="max-width: 550px; text-align: left; padding: 32px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h3 style="margin-bottom: 0; font-family: var(--font-heading);"><i class="fa-solid fa-circle-exclamation" style="color: var(--danger);"></i> SOS Emergency Post</h3>
+                <i class="fa-solid fa-xmark" id="board-modal-close" style="font-size: 20px; cursor: pointer; color: var(--text-secondary);"></i>
+            </div>
+            
+            <form id="urgency-request-form">
+                <!-- Patient Name -->
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+                    <input type="text" id="patient-name" class="form-control" placeholder="Enter patient's full name" required>
+                </div>
+
+                <!-- Blood Group Selection & Urgency Level -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label for="patient-blood-group">Required Blood Group</label>
+                        <select id="patient-blood-group" class="form-control" required>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patient-urgency">Urgency Priority Level</label>
+                        <select id="patient-urgency" class="form-control" required>
+                            <option value="critical" style="color:var(--danger); font-weight:700;">Critical (Immediate)</option>
+                            <option value="medium" style="color:var(--warning); font-weight:700;">Medium (Next 12 Hours)</option>
+                            <option value="low" style="color:var(--info); font-weight:700;">Low (Routine Case)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Hospital Address -->
+                <div class="form-group">
+                    <label for="patient-hospital">Hospital Name & Address</label>
+                    <input type="text" id="patient-hospital" class="form-control" placeholder="e.g. Fortis Hospital, Delhi" required>
+                </div>
+
+                <!-- City & Phone -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label for="patient-city">City Location</label>
+                        <input type="text" id="patient-city" class="form-control" placeholder="e.g. Delhi, Mumbai" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patient-phone">Contact Mobile Number</label>
+                        <input type="tel" id="patient-phone" class="form-control" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn primary-btn" style="width: 100%; padding: 14px; margin-top: 10px;">
+                    <i class="fa-solid fa-paper-plane"></i> Publish Emergency Alert
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

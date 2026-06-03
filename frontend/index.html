@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Emergency Blood Donor Platform</title>
+    <!-- Meta details for SEO -->
+    <meta name="description" content="BloodConnect is a premium emergency blood donor platform enabling instant matching, real-time urgency feeds, and one-click WhatsApp SOS alerts.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" class="active" id="nav-home">Home</a>
+            <a href="register.html" id="nav-register">Register Donor</a>
+            <a href="search.html" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+            <a href="admin.html" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <span class="badge">
+                    <i class="fa-solid fa-heartpulse"></i> Donate Blood, Save Lives
+                </span>
+                <h1 id="hero-title">Find Blood Donors Instantly in <mark>Emergency</mark></h1>
+                <p>
+                    BloodConnect helps patients find nearby blood donors, blood banks,
+                    and emergency help quickly during critical situations. One click can save a family member.
+                </p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn primary-btn" id="hero-cta-register">
+                        <i class="fa-solid fa-id-card"></i> Become a Donor
+                    </a>
+                    <a href="search.html" class="btn secondary-btn" id="hero-cta-search">
+                        <i class="fa-solid fa-magnifying-glass"></i> Find Blood
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero.jpg" alt="Blood Donation Concept Image">
+            </div>
+        </section>
+
+        <!-- Dynamic Counter Stats Section -->
+        <section class="stats" aria-label="Platform Statistics Dashboard">
+            <div class="stat-box">
+                <h2 id="stat-donors">0</h2>
+                <p>Active Donors</p>
+            </div>
+            <div class="stat-box">
+                <h2 id="stat-fulfilled">0</h2>
+                <p>SOS Requests Fulfilled</p>
+            </div>
+            <div class="stat-box">
+                <h2 id="stat-saved">0</h2>
+                <p>Lives Impacted</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" aria-labelledby="about-title">
+            <div class="about-image">
+                <img src="images/donate-life.jpg" alt="Blood donor with positive quote donate life">
+            </div>
+            <div class="about-content">
+                <h2 id="about-title">Why BloodConnect?</h2>
+                <p>
+                    Many patients lose valuable time searching for the right blood group.
+                    BloodConnect makes this process faster by connecting patients directly with
+                    available donors in their city, helping bridge the gap when minutes count.
+                </p>
+                <a href="register.html" class="btn primary-btn">
+                    <i class="fa-solid fa-droplet"></i> Join as Donor
+                </a>
+            </div>
+        </section>
+
+        <!-- Core Features Section (Images fixed based on VS Code images directory) -->
+        <section class="features" aria-labelledby="features-title">
+            <h2 id="features-title">Our Features</h2>
+            <p class="section-subtitle">Simple, fast and completely helpful in critical emergency situations.</p>
+
+            <div class="feature-container">
+                <!-- Feature 1: Donor Registration -->
+                <div class="feature-card">
+                    <img src="images/blood-bag.png" alt="Blood donation bag graphic represent registration">
+                    <h3>Donor Registration</h3>
+                    <p>Quickly sign up, list your availability toggle, and update your information anytime to save lives.</p>
+                </div>
+
+                <!-- Feature 2: Blood Group Finder -->
+                <div class="feature-card">
+                    <img src="images/donation-process.jpg" alt="Close up of blood donation process represent finding donors">
+                    <h3>Blood Group Finder</h3>
+                    <p>Search donors by blood group and city instantly to find perfect matches in real-time.</p>
+                </div>
+
+                <!-- Feature 3: WhatsApp SOS Alert -->
+                <div class="feature-card">
+                    <img src="images/blood-icon.jpg" alt="Abstract red droplet background graphic represent urgency alert">
+                    <h3>WhatsApp SOS Alert</h3>
+                    <p>Send emergency blood requests directly on WhatsApp using automatically pre-filled SOS messages.</p>
+                </div>
+
+                <!-- Feature 4: Nearby Blood Banks -->
+                <div class="feature-card">
+                    <img src="images/blood-center.jpg" alt="Inside standard blood center layout with donor chair represent center finder">
+                    <h3>Nearby Blood Banks</h3>
+                    <p>Find nearby government blood banks, hospitals, and coordinates using free interactive maps.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Banner -->
+        <section class="cta" aria-labelledby="cta-title">
+            <h2 id="cta-title">Your One Donation Can Save a Life</h2>
+            <p>Become a vital part of BloodConnect and help someone in need in your local community today.</p>
+            <a href="register.html" class="btn white-btn">
+                <i class="fa-solid fa-heart"></i> Register Now
+            </a>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

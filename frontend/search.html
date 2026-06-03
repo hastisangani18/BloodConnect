@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Blood Donors - BloodConnect</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="register.html" id="nav-register">Register Donor</a>
+            <a href="search.html" class="active" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+            <a href="admin.html" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header Title -->
+    <div class="page-header">
+        <span class="badge"><i class="fa-solid fa-magnifying-glass"></i> Live Directory</span>
+        <h1 class="page-title">Real-time Blood Donor Directory</h1>
+        <p class="section-subtitle">Search registered, healthy donors by selecting a blood group and typing your city location below. Get instantly in touch.</p>
+    </div>
+
+    <!-- Search Directory Panel and Map Visualizer -->
+    <main class="search-grid">
+        <!-- Search Controls and Matching Results Column -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+            <!-- Filters Card -->
+            <div class="glass-card" style="padding: 24px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <!-- Blood Group Selection -->
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="search-group">Blood Group</label>
+                        <select id="search-group" class="form-control" style="padding: 10px 14px;">
+                            <option value="">All Groups</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                    </div>
+
+                    <!-- City Search -->
+                    <div class="form-group" style="margin-bottom: 0;">
+                        <label for="search-city">City Location</label>
+                        <input type="text" id="search-city" class="form-control" style="padding: 10px 14px;" placeholder="e.g. Delhi, Mumbai" value="Delhi">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Listing Column -->
+            <div>
+                <h3 style="margin-bottom: 16px; font-family: var(--font-heading); display: flex; justify-content: space-between; align-items: center;">
+                    <span>Active Matched Donors</span>
+                    <span style="font-size: 14px; font-weight: 500; color: var(--text-secondary);"><span id="records-count" style="color:var(--primary); font-weight:700;">0</span> records found</span>
+                </h3>
+
+                <!-- List items rendered dynamically in JS -->
+                <div class="donors-list" id="donors-list">
+                    <!-- Cards will be populated by main.js search engine -->
+                </div>
+            </div>
+        </div>
+
+        <!-- High-fidelity Simulated Mapping Column -->
+        <div style="position: sticky; top: 100px;">
+            <div class="map-container">
+                <!-- Leaflet Engine Mock Graphic -->
+                <div class="mock-map">
+                    <div class="map-circle"></div>
+                    <div class="map-circle" style="animation-delay: 1.5s;"></div>
+                    <i class="fa-solid fa-hospital-user" style="font-size: 40px; color: var(--primary); z-index: 5; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));"></i>
+                    <!-- Dynamic Donor Pins are rendered inside by main.js updateMockMapPins() -->
+                </div>
+            </div>
+            
+            <p style="font-size: 12px; color: var(--text-secondary); text-align: center; margin-top: 12px;">
+                <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i> Map simulation overlays nearby coordinates, private clinics, and Red Cross cells.
+            </p>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

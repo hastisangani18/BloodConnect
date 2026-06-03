@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - BloodConnect</title>
+    <!-- Meta details for SEO -->
+    <meta name="description" content="Secure administrative access to BloodConnect directory, analytics console, and donor registry control management.">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <a href="index.html" class="logo" id="header-logo">
+            🩸 <span>BloodConnect</span>
+        </a>
+        <nav aria-label="Main Navigation">
+            <a href="index.html" id="nav-home">Home</a>
+            <a href="register.html" id="nav-register">Register Donor</a>
+            <a href="search.html" id="nav-search">Find Blood</a>
+            <a href="urgency-board.html" id="nav-board">Urgency Board</a>
+            <a href="admin.html" class="active" id="nav-admin">Admin</a>
+            <a href="signin.html">Sign In</a>
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fa-solid fa-moon" id="theme-icon"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Page Header Title -->
+    <div class="page-header">
+        <span class="badge"><i class="fa-solid fa-lock"></i> Secure Gateway</span>
+        <h1 class="page-title">Admin Authentication</h1>
+        <p class="section-subtitle">Please enter your administrator credentials to access the analytics console, toggles, and donor database registry.</p>
+    </div>
+
+    <!-- Login Form Section -->
+    <main style="padding: 0 8% 80px;">
+        <div class="glass-card form-container" style="max-width: 450px;">
+            <form id="admin-login-form">
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="admin-username">Administrator Username</label>
+                    <div style="position: relative;">
+                        <input type="text" id="admin-username" class="form-control" style="padding-left: 44px;" placeholder="Enter admin username" required>
+                        <i class="fa-solid fa-user" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="admin-password">Secure Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="admin-password" class="form-control" style="padding-left: 44px;" placeholder="Enter admin password" required>
+                        <i class="fa-solid fa-key" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-secondary);"></i>
+                    </div>
+                </div>
+
+                <!-- Error Message Alert Container -->
+                <div id="login-error-container" style="display: none; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.25); color: var(--danger); padding: 12px; border-radius: var(--radius-md); font-size: 13px; font-weight: 600; margin-bottom: 20px; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span id="login-error-text">Invalid login credentials.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn primary-btn" id="login-submit-btn" style="width: 100%; padding: 14px; margin-top: 10px;">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login to Console
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <p>© 2026 BloodConnect | Made with <span>❤️</span> for saving lives</p>
+    </footer>
+
+    <!-- Global Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
